@@ -1,7 +1,7 @@
 # https://www.youtube.com/watch?v=cONhad3q10s
 
 debug = False
-#all primes ending with 7 smaller than max
+#all primes ending with 1 smaller than max
 max=1000
 root3=[]
 root9=[]
@@ -22,30 +22,34 @@ if debug:
     print(root11)
 
 ticks=[]
-
+# (10k+3)*(10k+7)
 for n,v in enumerate(root3):
     for w in root7[n:]:
         if v*w not in ticks and v*w<max:
             ticks.append(v*w)
-#ticks1.sort()
-#print("ticks1",ticks1)
-
+# (10k+11)*(10k+11)
 for n,v in enumerate(root11):
     for w in root11[n:]:
         if v*w not in ticks and v*w<max:
             ticks.append(v*w)
+# (10k+9)*(10k+9)
+for n,v in enumerate(root9):
+    for w in root9[n:]:
+        if v*w not in ticks and v*w<max:
+            ticks.append(v*w)
+            
 ticks.sort()
 print("ticks",ticks)
 
-primes_7=[11]
+primes_1=[11]
 for k in range(len(ticks)-1):
     bas=ticks[k]
     haut=ticks[k+1]
     #print(f"{bas}-{haut}:",end="")
     for j in range(1,(haut-bas)//10):
         v=bas+j*10        
-        primes_7.append(v)
+        primes_1.append(v)
         #print(v,end=",")
     #print()
 print()
-print(len(primes_7),primes_7)
+print(len(primes_1),primes_1)

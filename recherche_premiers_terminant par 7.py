@@ -2,7 +2,7 @@
 
 debug = False
 #all primes ending with 7 smaller than max
-max=5000
+max=500
 root3=[]
 root9=[]
 root7=[]
@@ -23,15 +23,14 @@ if debug:
 
 ticks=[]
 
-for n,v in enumerate(root3):
-    for w in root9[n:]:
-        if v*w not in ticks and v*w<max:
-            ticks.append(v*w)
-#ticks1.sort()
-#print("ticks1",ticks1)
-
+# (10k+7)*(10k+11)
 for n,v in enumerate(root7):
     for w in root11[n:]:
+        if v*w not in ticks and v*w<max:
+            ticks.append(v*w)
+# (10k+3)*(10k+9)
+for n,v in enumerate(root3):
+    for w in root9[n:]:
         if v*w not in ticks and v*w<max:
             ticks.append(v*w)
 ticks.sort()
