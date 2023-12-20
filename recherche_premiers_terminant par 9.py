@@ -10,10 +10,12 @@ root11=[]
 
 for n in range(max//3):
     root3.append(10*n+3)
+for n in range(max//9):
     root9.append(10*n+9)
-for n in range(max//7):
-    root7.append(10*n+7)
     root11.append(10*n+11)
+for n in range(max//7):    
+    root7.append(10*n+7)
+    
     
 if debug:
     print(root3)
