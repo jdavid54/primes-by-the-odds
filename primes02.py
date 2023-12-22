@@ -24,6 +24,7 @@ last_n = 2
 pairs = []
 
 for n in range(3,max,2):   #candidates = all odds from 3 to max
+    if n%10==5: continue  #primes never end with 5 but only 1,3,7,9
     prime = True    
     count = 0
     for k in primes:  # division by all known primes
